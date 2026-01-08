@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { api } from "./repositories/api/api";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigateToPF = () => {
+    // valida login / token / etc
+    navigate("/cadastro-pf");
+  };
+
+  const handleNavigateToPJ = () => {
+    // valida login / token / etc
+    navigate("/cadastro-pj");
+  };
 
   const handleSetUsers = () => {
     setLoading(true);
@@ -38,6 +50,12 @@ const App = () => {
     <div className="dashboard">
       <p className="dashboard-p">Dashboard - MFE</p>
       {renderApiWithNames()}
+
+      {/* <button onClick={handleNavigateToNewScreen()}>
+        Cadastro Pessoa Fisica
+      </button> */}
+      <button onClick={handleNavigateToPF}>Cadastro Pessoa Fisica</button>
+      <button onClick={handleNavigateToPJ}>Cadastro Pessoa Juridica</button>
     </div>
   );
 };
