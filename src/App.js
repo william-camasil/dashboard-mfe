@@ -4,7 +4,7 @@ import "./App.css";
 const App = () => {
   return (
     <div className="dashboard">
-      <p>Dashboard - MFE</p>
+      <p className="dashboard-p">Dashboard - MFE</p>
     </div>
   );
 };
